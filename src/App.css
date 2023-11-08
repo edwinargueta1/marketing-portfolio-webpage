@@ -31,6 +31,7 @@
   margin: 0;
   font-family: 'Slabo','Arial Narrow', Arial, sans-serif;
   color: var(--PrimaryColor);
+  caret-color: red;
 }
 p{
   color: var(--TextColor);
@@ -50,49 +51,65 @@ button:hover{
   color: var(--DarkColor);
   background-color: var(--SecondaryColor);
 }
-h2{
+h1{
   padding-bottom: 18px;
 }
 
 #headContent{
   background-color: var(--SecondaryColor);
+  padding-top: 50px;
+  padding-bottom: 30px;
+}
+
+
+#headContent #navList{
+  padding-right: 50px;
+  padding-left: 50px;
+  display: flex;
 }
 ul{
   list-style-type: none;
   overflow: hidden;
-  /* background-color: blue; */
 }
-#headContent #navBar{
-  padding-right: 50px;
-  padding-left: 50px;
+#headContent #navList #navWrapper{
+  display: flex;
+  margin: auto;
+  /* background-color: var(--PrimaryColor); */
+  /* border-radius: 16px; */
 }
-#headContent #navBar #profileName{
-  float: left;
-  font-weight: 600;
+#headContent #navList #navWrapper .navButton{
+  float: none;
+  width: 90px;
+  text-align: center;
+  background-color: var(--PrimaryColor);
 }
-#headContent #navBar #profileName h1{
-  color: var(--DarkColor);
-  font-size: 18px;
-  display: block;
-  padding: 20px;
-}
-#headContent #navBar .navButton{
-  float: right;
-
-}
-#headContent #navBar a{
+#headContent #navList #navWrapper a{
   display: block;
   text-decoration: none;
   padding: 20px;
-  color:black;
   transition: 0.3s;
-  
+  color: var(--LightColor);
 }
-#headContent #navBar a:hover{
+#headContent #navList #navWrapper .navButton:first-child{
+  border-top-left-radius: 16px;
+  border-bottom-left-radius: 16px;
+}
+#headContent #navList #navWrapper .navButton:last-child{
+  border-bottom-right-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+/* Nav buttons dont highlight when mouse hovers over */
+#headContent #navList #navWrapper .navbutton:hover{
   transition: 0.3s;
   background-color: var(--DarkColor);
   color: var(--LightColor);
 }
+#headContent #navList #navWrapper a:first-child{
+  /* background-color: red; */
+}
+
+
 
 #circleImage{
   display: flex;
@@ -105,11 +122,11 @@ ul{
   object-fit: fill;
 }
 
-#introQuote{
+#profileTitle{
   text-align: center;
   width: 400px;
   margin: auto;
-  padding: 30px;
+  padding: 10px;
 }
 
 
