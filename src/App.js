@@ -9,24 +9,29 @@ function App() {
     <>
       <body>
         <div id='headContent'>
-          <CircleProfilePhoto />
+          <div className='container'>
+          <CircleProfilePhoto link='Assets/headshot.jpg'/>
           <div id='profileTitle'>
-          <h1 id='username'>Vanessa Martin Del Campo</h1>
-          <h3 id='title'>PR and Marketing</h3>
+            <h1 id='username'>Vanessa Martin Del Campo</h1>
+            <h3 id='title'>PR and Marketing</h3>
           </div>
 
-          <NavBar/>
+          <NavBar />
 
+          </div>
+          
         </div>
 
         <div id='bodyContent'>
           <Router>
-            <Routes>
-              <Route path='/' element={<HomePage/>} />
-              <Route path='/projects' element={<ProjectPage/>}/>
-              <Route path='/contact' element={<SimpleContactForm/>}/>
-              <Route path='*' element={<ErrorPage/>}/>
-            </Routes>
+            <div className='container'>
+              <Routes>
+                <Route path='/' element={<HomePage />} />
+                <Route path='/projects' element={<ProjectPage />} />
+                <Route path='/contact' element={<SimpleContactForm />} />
+                <Route path='*' element={<ErrorPage />} />
+              </Routes>
+            </div>
           </Router>
         </div>
         <footer>
@@ -37,8 +42,8 @@ function App() {
   );
 }
 
-function ProjectPage(){
-  return(
+function ProjectPage() {
+  return (
     <>
       <h2>Project Something</h2>
     </>
@@ -48,40 +53,42 @@ function ProjectPage(){
 function HomePage() {
   return (
     <>
-      <div className='container'>
-        <div id='summarySection'>
-          <div id='summaryTitle'>
-            <h3>Hello there - Vanessa here</h3>
-          </div>
-          <div id='summary'><p>I'm an online marketing manager, specialized in social media and content marketing. I make data-based decisions for the best performance but I'm also not afraid to let my creativity shine.</p>
-            <p>With a pasion for all things marketing. I have honed my skills on creating and executing effective marketing strategies across a variety of channels.</p>
-            <p>With a keen eye for detail and deep underdtanding of consumer behavior. I appreciate every project with unique perspective, tailoring their approach to each client's specific needs.</p>
-            <button>Let's Chat</button>
-          </div>
+      <div id='summarySection'>
+        <div id='summaryTitle'>
+          <h3>About Me</h3>
         </div>
+        <div id='summary'>
+          <p>Vanessa Martin is a dedicated and skilled professional with a strong background in public relations, social media management, and content creation. With a Bachelor of Arts in Journalism and a concentration in Public Relations and Interactive Marketing from California State University of Northridge, she brings a solid educational foundation to her work. Vanessa is a collaborative team player with strong emotional intelligence, empathy, active listening skills, adaptability, and a creative mindset.</p>
 
-        <div id='pointSection'>
-          <InfoCards title="SEO" text="Optimize your pages and sites so that they show up on the top of Google every single time." />
-          <InfoCards title="CRO" text="Getting alot of traffic is great. But you know what is better? When they all convert." />
-          <InfoCards title="Brand Strategy" text="Establish a tone of voice, sort your visual branding and start making a marketing plan." />
-        </div>
+          <p>In her most recent role as a Program Assistant, Social Media Manager, and Blog Editor at Polishing the Professional, Vanessa demonstrated her expertise in PR and brand-driven tasks. She effectively marketed career center services to regional centers and clients with physical and mental disabilities, utilizing her excellent communication and interpersonal skills. Vanessa's responsibilities included distributing materials to clients, cold calling prospective companies, organizing events, and managing the organization's social media accounts. Vanessa's proficiency in social media management was evident as she maintained all platforms with engaging content, managed social media calendars, and significantly increased Instagram following through organic reach.</p>
 
-        <div id='projectSection'>
-          <h2>Sneek Peek of my recent projects</h2>
-          <div id='projects'>
-            <ProjectCards title='Project 1' text="Description of Project on thing and stuff that are important" />
-            <ProjectCards title='Beta Project' text="The second description for project 2 and its glory" />
-            <ProjectCards title='Project Tres' text="The third installment of vanessa glory and acomplishment" />
-          </div>
+          <p>Fluent in Spanish, Vanessa possesses excellent language skills and is proficient in various computer programs, including Adobe Premiere Pro, Hootsuite, Microsoft Office 365 Tools, and SEO. She is also well-versed in networking and communication, maintaining professional relationships with clients and industry professionals.</p>
+
+          <p>Her expertise also extends to content creation, copywriting, and editing, with a keen eye for detail in spelling, grammar, and style checks. Vanessa's ability to create compelling social media campaigns and her talent for crafting persuasive copy were essential in her role. With her comprehensive skill set and passion for effective communication, Vanessa Martin is a dedicated professional committed to delivering outstanding results in the field of public relations and social media management.</p>
         </div>
-        
+        <a className='contactButton' href='./contact'>Let's Chat</a>
+      </div>
+
+      {/* <div id='pointSection'>
+        <InfoCards title="SEO" text="Optimize your pages and sites so that they show up on the top of Google every single time." />
+        <InfoCards title="CRO" text="Getting alot of traffic is great. But you know what is better? When they all convert." />
+        <InfoCards title="Brand Strategy" text="Establish a tone of voice, sort your visual branding and start making a marketing plan." />
+      </div> */}
+
+      <div id='projectSection'>
+        <h2>Sneek Peek of my recent projects</h2>
+        <div id='projects'>
+          <ProjectCards title='Project 1' text="Description of Project on thing and stuff that are important" />
+          <ProjectCards title='Beta Project' text="The second description for project 2 and its glory" />
+          <ProjectCards title='Project Tres' text="The third installment of vanessa glory and acomplishment"  link=''/>
+        </div>
       </div>
     </>
   )
 }
 
-function ErrorPage(){
-  return(
+function ErrorPage() {
+  return (
     <>
       <h2>
         Error this Page does not exist!
@@ -98,7 +105,7 @@ function NavBar() {
           <div id='navWrapper'>
             <li id="home" className='navButton'><a href="./">Home</a></li>
             <li id="contact" className='navButton'><a href="./contact">Contact</a></li>
-            <li id="info" className='navButton'><a href='./projects'>Info</a></li>
+            <li id="info" className='navButton'><a href='./projects'>Projects</a></li>
           </div>
         </ul>
       </nav>
@@ -132,7 +139,7 @@ function ProjectCards(props) {
     <>
       <div id='container'>
         <div id='projectPhoto'>
-          <img src={require("./Assets/headshot.jpg")} />
+          <img src={require('./Assets/headshot.jpg')} />
         </div>
         <h4>{props.title}</h4>
         <p>{props.text}</p>
@@ -207,7 +214,7 @@ function SimpleContactForm() {
           <input
             id='contactName'
             type='name'
-            placeholder='You Name'
+            placeholder='Your Name'
             value={name}
             onChange={(e) => setName(e.target.value)}
           ></input>
@@ -227,7 +234,7 @@ function SimpleContactForm() {
             value={message}
             onChange={(e) => setMessage(e.target.value)}
           ></textarea>
-          <button type='submit'>Send Mail</button>
+          <button className='contactButton' type='submit'>Send Mail</button>
         </form>
       </div>
     </>
