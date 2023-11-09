@@ -2,6 +2,8 @@ import React, { Component, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 
+
+import images from './Assets/images.js';
 import IconLinkedin from './Assets/svgIcons';
 
 function App() {
@@ -10,7 +12,7 @@ function App() {
       <body>
         <div id='headContent'>
           <div className='container'>
-          <CircleProfilePhoto link='Assets/headshot.jpg'/>
+          <CircleProfilePhoto  src={images.profile} alt='Profile Photo' />
           <div id='profileTitle'>
             <h1 id='username'>Vanessa Martin Del Campo</h1>
             <h3 id='title'>PR and Marketing</h3>
@@ -27,7 +29,7 @@ function App() {
             <div className='container'>
               <Routes>
                 <Route path='/' element={<HomePage />} />
-                <Route path='/projects' element={<ProjectPage />} />
+                <Route path='/portfolio' element={<PortfolioPage />} />
                 <Route path='/contact' element={<SimpleContactForm />} />
                 <Route path='*' element={<ErrorPage />} />
               </Routes>
@@ -42,7 +44,7 @@ function App() {
   );
 }
 
-function ProjectPage() {
+function PortfolioPage() {
   return (
     <>
       <h2>Project Something</h2>
@@ -78,7 +80,12 @@ function HomePage() {
       <div id='projectSection'>
         <h2>Sneek Peek of my recent projects</h2>
         <div id='projects'>
-          <ProjectCards title='Project 1' text="Description of Project on thing and stuff that are important" />
+          <ProjectCards 
+            href='./portfolio'
+            title='Polishing the Professional' 
+            text="Description of Project on thing and stuff that are important"
+            src='https://polishingtheprofessional.com/wp-content/uploads/elementor/thumbs/Polishing-The-Professional-Logo-q7ctcu78umdm22r03buzkdtkl8m2l5y7re2tvwwk7g.png'
+          />
           <ProjectCards title='Beta Project' text="The second description for project 2 and its glory" />
           <ProjectCards title='Project Tres' text="The third installment of vanessa glory and acomplishment"  link=''/>
         </div>
@@ -105,7 +112,7 @@ function NavBar() {
           <div id='navWrapper'>
             <li id="home" className='navButton'><a href="./">Home</a></li>
             <li id="contact" className='navButton'><a href="./contact">Contact</a></li>
-            <li id="info" className='navButton'><a href='./projects'>Projects</a></li>
+            <li id="info" className='navButton'><a href='./portfolio'>Portfolio</a></li>
           </div>
         </ul>
       </nav>
@@ -113,11 +120,11 @@ function NavBar() {
   )
 }
 
-function CircleProfilePhoto() {
+function CircleProfilePhoto(props) {
   return (
     <>
       <div id='circleImage'>
-        <img src={require("./Assets/headshot.jpg")} />
+        <img src={props.src} alt={props.alt} />
       </div>
     </>
   )
@@ -135,15 +142,17 @@ function InfoCards(props) {
 }
 
 function ProjectCards(props) {
+  
+
   return (
     <>
-      <div id='container'>
+      <a href={props.href} id='container'>
         <div id='projectPhoto'>
-          <img src={require('./Assets/headshot.jpg')} />
+          <img src={props.src} />
         </div>
         <h4>{props.title}</h4>
         <p>{props.text}</p>
-      </div>
+      </a>
     </>
   )
 }
