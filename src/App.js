@@ -12,16 +12,14 @@ function App() {
       <body>
         <div id='headContent'>
           <div className='container'>
-          <CircleProfilePhoto  src={images.profile} alt='Profile Photo' />
-          <div id='profileTitle'>
-            <h1 id='username'>Vanessa Martin Del Campo</h1>
-            <h3 id='title'>PR and Marketing</h3>
+            <CircleProfilePhoto src={images.profile} alt='Profile Photo' />
+            <div id='profileTitle'>
+              <h1 id='username'>Vanessa Martin Del Campo</h1>
+              <h3 id='title'>PR and Marketing</h3>
+            </div>
+            <NavBar />
           </div>
 
-          <NavBar />
-
-          </div>
-          
         </div>
 
         <div id='bodyContent'>
@@ -47,7 +45,34 @@ function App() {
 function PortfolioPage() {
   return (
     <>
-      <h2>Project Something</h2>
+      <h3>Portfolio</h3>
+      <PortfolioItem 
+        src={images.profile} 
+        title='Polishing the Professional' 
+        description='The Social Security Administration has recently announced an outreach development campaign to bring access and information to eligible individuals in underserved communities to apply for Supplemental Security Income.  '
+      />
+
+        <Routes>
+          <Route path='./PolishingtheProfessional'/>
+        </Routes>
+    </>
+  )
+}
+
+function PortfolioItem(props) {
+  return (
+    <>
+      <a href={props.link}>
+        <div className='portfolioContainer'>
+          <div id='portfolioImage'>
+            <img src={props.src} />
+          </div>
+          <div id='portfolioDescription'>
+            <h4>{props.title}</h4>
+            <p>{props.description}</p>
+          </div>
+        </div>
+      </a>
     </>
   )
 }
@@ -78,7 +103,7 @@ function HomePage() {
       </div> */}
 
       <div id='projectSection'>
-        <h2>Sneek Peek of my recent projects</h2>
+        <h3>Sneek Peek of my Portfolio</h3>
         <div id='projects'>
           <ProjectCards 
             href='./portfolio'
@@ -162,7 +187,7 @@ function FooterSection(props) {
     <>
       <div id='footer'>
         <div id='footerContent'>
-          <h2>{props.name}</h2>
+          <h1>{props.name}</h1>
           <p>{props.location} | {props.email}</p>
           <br />
           <div id='icons'>
@@ -213,7 +238,7 @@ function SimpleContactForm() {
     <>
       <div id='contactSection'>
         <div id='contactDirections'>
-          <h2>Get in Touch!</h2>
+          <h3>Get in Touch!</h3>
           <p id='contactMessage'>Please provide some information on your goals and I'll get back to you in 2 business days to schedule a call.</p>
           <p id='formConsole'>{consoleMessage}</p>
         </div>
