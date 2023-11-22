@@ -90,7 +90,7 @@ h4{
   padding-top: 50px;
 }
 
-
+/* Nav Bar */
 #headContent #navList{
   padding-right: 50px;
   padding-left: 50px;
@@ -105,11 +105,6 @@ ul{
 #headContent #navList #navWrapper{
   display: flex;
   margin: auto;
-}
-#headContent #navList #navWrapper .navButton{
-  float: none;
-  width: 90px;
-  text-align: center;
 }
 #headContent #navList #navWrapper a{
   display: block;
@@ -160,7 +155,7 @@ ul{
   margin: auto;
   padding-left: 30px;
   padding-right:30px;
-  /* background-color: red; */
+  /* background-color: green; */
 }
 
 #summarySection{
@@ -268,34 +263,71 @@ ul{
 #footer #footerContent{
   margin: auto;
   text-align: center;
-  /* background-color: var(--LightColor); */
   background: linear-gradient(rgba(0,0,0,0), var(--SecondaryColor));
-  padding: 40px;
+  padding: 20px;
 }
+
 
 
 
 /* Portfolio page */
 .portfolioContainer{
   border-top: 1px solid var(--PrimaryColor);
-  padding:20px;
-  display: flex;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  /* display: flex; */
   height: 100px;
+  /* width: 100%; */
+  overflow: hidden;
+  /* background-color: red; */
 }
-.portfolioContainer #portfolioImage{
-  aspect-ratio: 16/9;
-  height: 100%;
+.portfolioContainer a{
+  /* background-color: red; */
+  text-decoration: none;
+  /* text-overflow: ellipsis; */
+}
+.portfolioContainer a .atagCon .portfolioImageContainer{
+  /* aspect-ratio: 16/9; */
+  /* height: 100px; */
+  width: 600px;
+  /* background-color: blue; */
   margin: auto;
+  /* text-overflow: ellipsis; */
 }
-.portfolioContainer #portfolioImage img{
-  border: 1px solid var(--DarkColor);
+.atagCon{
+  display: flex;
+  /* text-overflow: ellipsis; */
+}
+.portfolioContainer a .atagCon .portfolioImageContainer .imagee{
+  /* border: 1px solid var(--DarkColor); */
   border-radius: 10px;
-  height: 100%;
+  display: block;
+  height: 100px;
   margin: auto;
+  /* text-overflow: ellipsis; */
+}
+.portfolioContainer a .atagCon .portfolioDescription{
+  /* padding-left: 50px; */
+  /* text-overflow: ellipsis; */
+  /* overflow: hidden; */
+  height: 100px;
+
+  display: block;/* or inline-block */
+  /* text-overflow: ellipsis; */
+  /* word-wrap: break-word; */
+  overflow: hidden;
+  max-height: 5.3em;
+  line-height: 1.8em;
+
+}
+.portfolioContainer a .atagCon .portfolioDescription p{
+  /* text-overflow: ellipsis; */
 }
 
+
+/* 
 iframe{
   width: 100%;
   border-radius: 16px;
   aspect-ratio: 4/3;
-}
+} */

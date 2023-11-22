@@ -47,6 +47,19 @@ function PortfolioPage() {
     <>
       <h3>Portfolio</h3>
       <PortfolioItem 
+        link='./PolishingTheProfessional'
+        src='https://polishingtheprofessional.com/wp-content/uploads/elementor/thumbs/Polishing-The-Professional-Logo-q7ctcu78umdm22r03buzkdtkl8m2l5y7re2tvwwk7g.png' 
+        title='Polishing the Professional' 
+        description='The Social Security Administration has recently announced an outreach development campaign to bring access and information to eligible individuals in underserved communities to apply for Supplemental Security Income.'
+      />
+      <PortfolioItem 
+        link='./SomethingElse'
+        src={images.profile} 
+        title='Polishing the Professional' 
+        description='The Social Security Administration has recently announced an outreach development campaign to bring access and information to eligible individuals in underserved communities to apply for Supplemental Security Income.  '
+      />
+      <PortfolioItem 
+        link='./SomethingElse'
         src={images.profile} 
         title='Polishing the Professional' 
         description='The Social Security Administration has recently announced an outreach development campaign to bring access and information to eligible individuals in underserved communities to apply for Supplemental Security Income.  '
@@ -62,17 +75,19 @@ function PortfolioPage() {
 function PortfolioItem(props) {
   return (
     <>
-      <a href={props.link}>
-        <div className='portfolioContainer'>
-          <div id='portfolioImage'>
-            <img src={props.src} />
+      <div className='portfolioContainer'>
+        <a href={props.link} >
+          <div className='atagCon'>
+            <div className='portfolioImageContainer'>
+              <img className='imagee' src={props.src} />
+            </div>
+            <div className='portfolioDescription'>
+              <h4>{props.title}</h4>
+              <p>{props.description}</p>
+            </div>
           </div>
-          <div id='portfolioDescription'>
-            <h4>{props.title}</h4>
-            <p>{props.description}</p>
-          </div>
-        </div>
-      </a>
+        </a>
+      </div>
     </>
   )
 }
@@ -191,7 +206,7 @@ function FooterSection(props) {
           <p>{props.location} | {props.email}</p>
           <br />
           <div id='icons'>
-            <a href='#linkedin'><IconLinkedin /></a>
+            <a href='https://www.linkedin.com/in/vanessa-martin-a7352b182/'><IconLinkedin /></a>
           </div>
         </div>
       </div>
