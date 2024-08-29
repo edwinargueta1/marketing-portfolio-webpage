@@ -14,9 +14,9 @@
 :root{
 
   /* Color Pallete */
-  --LightColor: #F2E3ED;
-  --SecondaryColor: #DFB9D2;
-  --PrimaryColor: #7E3A66;
+  --LightColor: white;
+  --SecondaryColor: #FFE6F1;
+  --PrimaryColor: #FF6EAB;
   --DarkColor: #2F0147;
   --TextColor: #0F0905;
 
@@ -24,15 +24,6 @@
 ::-webkit-scrollbar{
   width: 0px;
 }
-/* ::-webkit-scrollbar-thumb{
-  background: var(--PrimaryColor);
-  border-radius: 10px;
-  height: 1px;
-  width: 1px;
-}
-::-webkit-scrollbar-track{
-  background: var(--LightColor);
-} */
 
 *{
   padding: 0;
@@ -44,17 +35,12 @@ html{
   scroll-behavior: smooth;
   background-color: var(--LightColor);
 }
-body{
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
 p{
   color: var(--TextColor);
   font-size: 1.2rem;
 }
 h1{
-  font-family: Serenity;
+  /* font-family: Serenity; */
   font-size: 2.2rem;
   padding-bottom: 0px;
 }
@@ -67,6 +53,15 @@ h3{
 h4{
   font-size: 1.4rem;
 }
+
+.App{
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .contactButton{
   padding: 10px;
   text-decoration: none;
@@ -86,133 +81,159 @@ h4{
 }
 
 
-#headContent{
-  padding-top: 50px;
+.headContent{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+.top{
+  display: block;
+  flex-direction: column;
+  /* align-content: flex-start; */
+  width:max-content;
+  padding-right: 2rem;
+  /* border: red 1px solid; */
+  height: 100%;
 }
 
 /* Nav Bar */
-#headContent #navList{
-  padding-right: 50px;
-  padding-left: 50px;
+.spacer{
+  padding-top: 6rem;
+}
+.navBar {
+  /* border: solid red 1px; */
+  z-index: 2;
   display: flex;
-  border-top: var(--PrimaryColor) solid 1px;
-  border-bottom: var(--PrimaryColor) solid 1px;
+  box-sizing: border-box;
+  height: 4.5rem;
+  align-items: stretch;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  position: fixed;
+  width: 100vw;
+  background-color: white;
+  
+  transition: color 1s, box-shadow 0.1s;
+    transition-property: color, box-shadow;
+    transition-duration: 0.1s, 0.1s;
+    transition-timing-function: ease, ease;
+    transition-delay: 0s, 0s;
+}
+.navBar.shadow{
+  /* border: solid orange 1px; */
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.322);
+}
+.navBar ul{
+  display: flex;
+  margin-left: auto;
+  height: 100%;
+}
+.navBar ul .navButton{
+  height: 100%;
+}
+.navBar a{
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  height: 3rem;
+  /* border:solid black 1px; */
+  text-decoration: none;
+  height: 100%;
+  transition: box-shadow 0.3s;
+  
+}
+.navBar a:hover{
+  box-shadow: inset 0 -3px var(--PrimaryColor);
 }
 ul{
   list-style-type: none;
   overflow: hidden;
 }
-#headContent #navList #navWrapper{
+.row{
   display: flex;
-  margin: auto;
-}
-#headContent #navList #navWrapper a{
-  display: block;
-  text-decoration: none;
-  padding: 20px;
-  transition: 0.3s;
-  color: var(--PrimaryColor);
-}
-#headContent #navList #navWrapper .navButton a:hover{
-  transition: 0.3s;
-  background-color: var(--PrimaryColor);
-  color: var(--LightColor);
 }
 
-
-
-#circleImage{
-  display: flex;
-  position: relative; 
-  width: 150px; 
-  height: 150px; 
-  overflow: hidden; 
-  border-radius: 50%;
-  margin: auto;
-  object-fit: fill;
-}
-
-#profileTitle{
-  text-align: center;
-  width: 600px;
-  margin: auto;
-  padding: 10px;
+#profilePhoto{
+  width: 25rem;
+  border-radius: 1rem;
 }
 #profileTitle #username{
-  font-family: Serenity;
+  /* font-family: Serenity; */
   font-size: 3.5rem;
   padding-bottom: 0px;
 }
 
 
-#bodyContent{
-  padding-top: 30px;
+.bodyContent{
+  max-width: 1200px;
+  width: 100%;
+  box-sizing: border-box;
+  padding-top: 2rem;
   background-color: var(--LightColor);
   flex-grow: 1;
+  padding: 3rem;
+  overflow: hidden;
+  /* border: solid blue 1px; */
 }
-.container{
-  max-width: 1200px;
-  margin: auto;
-  padding-left: 30px;
-  padding-right:30px;
-  /* background-color: green; */
+/* Fix Wrapping */
+.pageWrapper{ 
+  /* width: max-content; */
 }
-
-#summarySection{
+.summarySection{
   padding-bottom: 50px;
 }
-#summarySection #summary{
+.summarySection .summary{
   padding-bottom: 30px;
 }
-#summarySection #summaryTitle{
+.summarySection .summaryTitle{
   width: 50%;
 }
-#summarySection #summary p{
+.summarySection .summary p{
   padding-bottom: 20px;
 }
 
-
-
-#pointSection{
+.projectSection .projects{
   display: flex;
-  padding-bottom: 50px;
-}
-#pointSection #container{
-  width:33%;
-  /* padding: 3%; */
-} 
-#pointSection h3{
-  padding-bottom: 10px;
+  justify-content: space-between;
 }
 
-
-
-#projectSection #projects{
+.projectSection .projectCardWrapper{
   display: flex;
-  padding-bottom: 50px;
+  align-items: center;
+  justify-content: center;
+  width: 19rem;
+  padding:1rem;
+  transition: transform 200ms;
 }
-#projectSection #container{
-  width: 30%;
-  text-align: center;
-  padding: 3%;
-  padding-bottom: 10px;
+.projectSection .projectCardWrapper:hover{
+  transform: scale(1.1);
+}
+.projectSection .projectCardWrapper a{
   text-decoration: none;
-}
-#projectSection #container #projectPhoto{
   display: flex;
-  position: relative;
+  flex-direction: column;
+}
+.projectSection .projectCardWrapper p{
+  font-size:  1rem;
+}
+
+.projectSection .projectPhoto{
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
-  height: 150px;
   overflow:hidden;
-  margin: auto;
-  box-shadow: 10px 10px;
-  border: var(--PrimaryColor) solid ;
+  border-radius: 1rem;
+  /* border: solid 1px red; */
+  aspect-ratio: 1;
 }
-#projectSection #container #projectPhoto img{
+.projectSection .projectPhoto img{
   max-width: 100%;
-  /* max-height: 100%; */
+  overflow: hidden;
+  
 }
-#projectSection #container h4{
+.projectSection h4{
   padding-top: 15px;
 }
 
@@ -228,11 +249,6 @@ ul{
 #contactSection #contactDirections #contactMessage{
   padding-bottom: 200px;
 }
-
-#formConsole{
-  /* background-color: blue; */
-  /* text-align: center; */
-}
 #contactSection #contactForm{
   width: 50%;
 }
@@ -245,7 +261,8 @@ ul{
   padding: 10px;
   margin-bottom: 10px;
   background-color:var(--SecondaryColor);
-  border: 1px solid var(--PrimaryColor);
+  /* border: 1px solid var(--PrimaryColor); */
+  border: none;
   border-radius: 10px;
   font-size: 1.2rem;
 }
@@ -254,80 +271,126 @@ ul{
   padding: 10px;
   margin-bottom:10px;
   background-color: var(--SecondaryColor);
-  border: 1px solid var(--PrimaryColor);
-  border-radius: 10px;
+  /* border: 1px solid var(--PrimaryColor); */
+  border:none;
+  border-radius: 1rem;
   font-size: 1.2rem;
+  resize: none;
 }
 
 
-#footer #footerContent{
+.footer .footerContent{
   margin: auto;
   text-align: center;
   background: linear-gradient(rgba(0,0,0,0), var(--SecondaryColor));
   padding: 20px;
+  width: 100vw;
+  box-sizing: border-box;
 }
-
-
-
 
 /* Portfolio page */
-.portfolioContainer{
-  border-top: 1px solid var(--PrimaryColor);
-  padding-top: 20px;
-  padding-bottom: 20px;
-  /* display: flex; */
-  height: 100px;
-  /* width: 100%; */
-  overflow: hidden;
-  /* background-color: red; */
+.portfolioItem{
+  /* border: 1px solid var(--PrimaryColor); */
+  margin-bottom: 1rem;
+  width: 100%;
+  /* overflow: hidden; */
+  /* background-color: var(--SecondaryColor); */
+  border-radius: 1rem;
 }
-.portfolioContainer a{
+.portfolioItem a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 9rem;
+
+
   /* background-color: red; */
+  padding: 0.5rem;
   text-decoration: none;
   /* text-overflow: ellipsis; */
+  transition: transform 200ms;
 }
-.portfolioContainer a .atagCon .portfolioImageContainer{
-  /* aspect-ratio: 16/9; */
-  /* height: 100px; */
-  width: 600px;
+.portfolioItem a:hover{
+  transform: scale(1.05);
+}
+.portfolioItem a .portfolioImageContainer{
+  aspect-ratio: 1;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  max-width: 19rem;
+  margin-right: 2rem;
+  margin-left: 1rem;
   /* background-color: blue; */
-  margin: auto;
-  /* text-overflow: ellipsis; */
 }
-.atagCon{
-  display: flex;
-  /* text-overflow: ellipsis; */
-}
-.portfolioContainer a .atagCon .portfolioImageContainer .imagee{
+.portfolioItem a .portfolioImageContainer img{
+  /* border: solid red 1px; */
+  max-width: 100%;
+  max-height: 100%;
   /* border: 1px solid var(--DarkColor); */
-  border-radius: 10px;
-  display: block;
-  height: 100px;
-  margin: auto;
-  /* text-overflow: ellipsis; */
-}
-.portfolioContainer a .atagCon .portfolioDescription{
-  /* padding-left: 50px; */
-  /* text-overflow: ellipsis; */
-  /* overflow: hidden; */
-  height: 100px;
-
-  display: block;/* or inline-block */
-  /* text-overflow: ellipsis; */
-  /* word-wrap: break-word; */
-  overflow: hidden;
-  max-height: 5.3em;
-  line-height: 1.8em;
-
-}
-.portfolioContainer a .atagCon .portfolioDescription p{
+  border-radius: 1rem;
+  /* display: block; */
+  /* height: 100px; */
+  /* margin: auto; */
   /* text-overflow: ellipsis; */
 }
 
 
-/* 
-iframe{
+iframe.pdfViewer{
+  height: 45rem;
   width: 100%;
-  border-radius: 16px;
-  aspect-ratio: 4/3;
-} */
+  border: none;
+}
+.portfolioCardWrapper{
+  background-color: var(--SecondaryColor);
+  border-radius: 1rem;
+  padding: 2rem;
+  padding-top: 1rem;
+  box-sizing: border-box;
+  margin: 1rem;
+}
+.portfolioCardWrapper img{
+  width: 100%;
+}
+
+@media (max-width: 68rem){
+  .row{
+    /* flex-direction: column; */
+  }
+  .headContent{
+    align-items: center;
+  }
+  .projectSection .projects{
+    /* flex-direction: column; */
+    align-items: center;
+    /* justify-content: center; */
+  }
+  .projectSection .projectPhoto{
+    max-width: 20rem;
+  }
+  .projectSection .projectCardWrapper{
+    width: 100%;
+    margin: 0.5rem;
+    /* border:solid var(--PrimaryColor) 1px; */
+    border-radius: 1rem;
+    align-items: center;
+  }
+  .projectSection .projectCardWrapper:hover{
+    transform:  scale(1.3);
+  }
+  .projectSection .projectCardWrapper a{
+    text-decoration: none;
+    flex-direction: row;
+    justify-content: center;
+    width:100%;
+  }
+  .projectSection .projectCardWrapper a .projectPhoto{
+    max-width: 6rem;
+    padding-right: 3rem;
+  }
+  .projectSection .projectCardWrapper a .projectDescription{
+    display: none;
+    visibility: hidden;
+  }
+}
