@@ -36,9 +36,7 @@ function App() {
                 <Route path='*' element={<Error />} />
               </Routes>
         </div>
-        <footer>
-          <FooterSection name="Vanessa Martin" location="Los Angeles, CA" email="martinvanessax3@gmail.com" />
-        </footer>
+          <FooterSection name="Vanessa Martin" location="Los Angeles, CA" email="martinvanessax3@gmail.com" linkedInURL='https://www.linkedin.com/in/vanessa-martin-a7352b182/'/>
     </div>
   );
 }

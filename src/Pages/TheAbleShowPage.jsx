@@ -1,5 +1,5 @@
 import React from "react";
-import PortfolioCard from "../Components/PortfolioCard";
+import PortfolioCard from "../Components/PortfolioCard.jsx";
 
 export default function TheAbleShowPage(){
     return(

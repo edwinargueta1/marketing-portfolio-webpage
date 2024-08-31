@@ -1,17 +1,15 @@
 import React from 'react';
-import IconLinkedin from '../Assets/svgIcons';
+import LinkedinIcon from '../Assets/Icons/LinkedinIcon.jsx';
 
 export default function FooterSection(props) {
     return (
-        <div className='footer'>
-          <div className='footerContent'>
+      <footer>
             <h1>{props.name}</h1>
             <p>{props.location} | {props.email}</p>
             <br />
             <div id='icons'>
-              <a href='https://www.linkedin.com/in/vanessa-martin-a7352b182/'><IconLinkedin /></a>
+              <a href={props.linkedInURL}><LinkedinIcon size="1.5rem" color={"#FF6EAB"} /></a>
             </div>
-          </div>
-        </div>
+      </footer>   
     )
   }

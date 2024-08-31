@@ -169,10 +169,10 @@ ul{
   max-width: 1200px;
   width: 100%;
   box-sizing: border-box;
-  padding-top: 2rem;
   background-color: var(--LightColor);
   flex-grow: 1;
   padding: 3rem;
+  padding-top: 1.5rem;
   overflow: hidden;
   /* border: solid blue 1px; */
 }
@@ -180,14 +180,25 @@ ul{
 .pageWrapper{ 
   /* width: max-content; */
 }
+.pageWrapper h3{
+  /* margin-left: 1.2rem; */
+}
+.pageWrapper svg{
+  margin-left: 1.2rem;
+  transition: 100ms;
+}
+.pageWrapper svg:hover{
+  transform: scale(1.25);
+}
 .summarySection{
-  padding-bottom: 50px;
+  /* padding-bottom: 50px; */
 }
 .summarySection .summary{
   padding-bottom: 30px;
 }
-.summarySection .summaryTitle{
-  width: 50%;
+.summarySection .summaryTitle h3{
+  /* width: 50%; */
+  margin-left: 0px;
 }
 .summarySection .summary p{
   padding-bottom: 20px;
@@ -199,9 +210,6 @@ ul{
 }
 
 .projectSection .projectCardWrapper{
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 19rem;
   padding:1rem;
   transition: transform 200ms;
@@ -279,13 +287,24 @@ ul{
 }
 
 
-.footer .footerContent{
+footer {
   margin: auto;
   text-align: center;
   background: linear-gradient(rgba(0,0,0,0), var(--SecondaryColor));
   padding: 20px;
   width: 100vw;
   box-sizing: border-box;
+}
+footer #icons a {
+  /* border: red solid 1px; */
+  transition: 100ms;
+}
+footer #icons a svg{
+  /* border: #0F0905 solid 1px; */
+  transition: 100ms;
+}
+footer #icons a svg:hover{
+  transform: scale(1.2);
 }
 
 /* Portfolio page */
@@ -328,12 +347,7 @@ ul{
   /* border: solid red 1px; */
   max-width: 100%;
   max-height: 100%;
-  /* border: 1px solid var(--DarkColor); */
   border-radius: 1rem;
-  /* display: block; */
-  /* height: 100px; */
-  /* margin: auto; */
-  /* text-overflow: ellipsis; */
 }
 
 
@@ -348,11 +362,19 @@ iframe.pdfViewer{
   padding: 2rem;
   padding-top: 1rem;
   box-sizing: border-box;
-  margin: 1rem;
+  margin-bottom: 1rem;
 }
 .portfolioCardWrapper img{
   width: 100%;
 }
+.portfolioCardWrapper iframe{
+  width: 100%;
+  height: 45rem;
+}
+.portfolioCardWrapper p {
+  font-size: 1rem;
+}
+
 
 @media (max-width: 68rem){
   .row{

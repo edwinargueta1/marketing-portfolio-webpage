@@ -1,5 +1,5 @@
 import React from "react";
-import ProjectCard from "../Components/ProjectCard";
+import ProjectCard from "../Components/ProjectCard.jsx";
 import images from "../Assets/images.js";
 import { Link } from "react-router-dom";
 
@@ -54,7 +54,7 @@ export default function Home() {
             href=""
             title="Vane's Vegan Visits"
             text="Local Los Angeles food blog."
-            src="./media/VeggieVisitsLogo1.png"
+            src="./media/Vanes_Veggie_Visits/VeggieVisitsLogo1.png"
           />
         </div>
       </div>
