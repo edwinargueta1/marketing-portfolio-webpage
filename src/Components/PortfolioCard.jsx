@@ -9,7 +9,7 @@ export default function PortfolioCard(props){
         function setFile(file){
             if(!typeof file === "string" || undefined == file){return};
             let extenSplit = file.split(".");
-            console.log(extenSplit);
+            // console.log(extenSplit);
             if(extenSplit.length <= 1){
                 console.error("File name does not have an extension.");
                 return
@@ -25,6 +25,8 @@ export default function PortfolioCard(props){
         setFile(props.media);
     }, [])
 
+
+    //Console log
     useEffect(() =>{
         console.log(props.title, props.media, fileType, date)
     }, [fileType, date] )

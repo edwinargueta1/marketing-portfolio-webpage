@@ -58,7 +58,7 @@ h4{
   min-height: 100vh;
   min-width: 100vw;
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   align-items: center;
 }
 
@@ -101,17 +101,17 @@ h4{
 .spacer{
   padding-top: 6rem;
 }
-.navBar {
+nav {
   /* border: solid red 1px; */
-  z-index: 2;
+  /* z-index: 2; */
   display: flex;
   box-sizing: border-box;
   height: 4.5rem;
   align-items: stretch;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
-  position: fixed;
-  width: 100vw;
+  /* position: fixed; */
+  /* width: 100vw; */
   background-color: white;
   
   transition: color 1s, box-shadow 0.1s;
@@ -120,19 +120,19 @@ h4{
     transition-timing-function: ease, ease;
     transition-delay: 0s, 0s;
 }
-.navBar.shadow{
+nav.shadow{
   /* border: solid orange 1px; */
   box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.322);
 }
-.navBar ul{
+nav ul{
   display: flex;
   margin-left: auto;
   height: 100%;
 }
-.navBar ul .navButton{
+nav ul .navButton{
   height: 100%;
 }
-.navBar a{
+nav a{
   display: flex;
   align-items: center;
   padding: 0 1rem;
@@ -143,7 +143,7 @@ h4{
   transition: box-shadow 0.3s;
   
 }
-.navBar a:hover{
+nav a:hover{
   box-shadow: inset 0 -3px var(--PrimaryColor);
 }
 ul{

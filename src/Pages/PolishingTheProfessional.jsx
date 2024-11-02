@@ -1,4 +1,3 @@
-import React from "react";
 import PortfolioCard from "../Components/PortfolioCard.jsx";
 import { InstagramEmbed } from "react-social-media-embed";
 import images from "../Assets/images.js";
@@ -16,8 +15,6 @@ export default function PolishingTheProfessionalPage() {
       </a>
       
       
-      
-
       <PortfolioCard 
       media="/media/Polishing_The_Professional/PTP_Podcast_Presentation_9-8-23.pdf"
       title="Dream Magic Studios & Polishing the Professional: Production"

@@ -1,15 +1,61 @@
 import React from 'react';
 import App from './App';
-import { BrowserRouter } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { createRoot } from 'react-dom/client';
+import Portfolio from './Pages/Portfolio';
+import Home from './Pages/Home';
+import PolishingTheProfessionalPage from './Pages/PolishingTheProfessional';
+import ProjectPage from './Pages/ProjectPage';
+import Contact from './Pages/Contact';
+import TheAbleShowPage from './Pages/TheAbleShowPage';
+import Error from './Pages/Error';
+
+
+const router = createBrowserRouter([
+    {
+        path: "/",
+        element: <App />,
+        children: [
+            {
+                path: '/',
+                element: <Home />
+            },
+            {
+                path: "/portfolio",
+                element: <Portfolio/>
+            },
+            {
+                path: "/portfolio/PolishingTheProfessional",
+                element: <PolishingTheProfessionalPage/>
+            },
+            {
+                path: "/portfolio/VanesVeggieVisits",
+                element: <ProjectPage/>
+            },
+            {
+                path: "/portfolio/ALSNetwork",
+                element: <ProjectPage/>
+            },
+            {
+                path: "/portfolio/TheAbleShow",
+                element: <TheAbleShowPage/>
+            },
+            {
+                path: "/contact",
+                element: <Contact/>
+            },
+            {
+                path: "*",
+                element: <Error/>
+            }]
+    }
+]);
 
 const container = document.getElementById('app');
 const root = createRoot(container);
 
 root.render(
-<BrowserRouter>
-    <App />
-</BrowserRouter>
+    <RouterProvider router={router}/>
 );
 
 

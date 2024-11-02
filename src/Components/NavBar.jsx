@@ -2,23 +2,23 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function NavBar() {
-  const [shadowNav, setShadowNav] = useState(false);
+  // const [shadowNav, setShadowNav] = useState(false);
 
-  //
-  useEffect(() => {
-    const isAtTop = () => {
-      setShadowNav(window.scrollY > 0);
-    };
+  // //
+  // useEffect(() => {
+  //   const isAtTop = () => {
+  //     setShadowNav(window.scrollY > 0);
+  //   };
 
-    window.addEventListener("scroll", isAtTop);
+  //   window.addEventListener("scroll", isAtTop);
 
-    return () => {
-      window.removeEventListener("scroll", isAtTop);
-    };
-  }, []);
+  //   return () => {
+  //     window.removeEventListener("scroll", isAtTop);
+  //   };
+  // }, []);
 
   return (
-    <nav className={`navBar ${shadowNav ? "shadow" : ""}`}>
+    <nav >
       <div className="portfolioName">
         <Link to={"./"}><h2>Vanessa Martin</h2></Link>
       </div>
