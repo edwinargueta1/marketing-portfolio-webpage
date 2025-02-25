@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 export default function Home() {
   return (
     <div className="pageWrapper">
+      <h1 className="title">Vanessa Martin</h1>
       <div className="row">
         <div className="headContent">
           <div className="top">
@@ -29,13 +30,13 @@ export default function Home() {
               listening skills, adaptability, and a creative mindset.
             </p>
           </div>
-          <Link className="contactButton" to="./contact">
+          {/* <Link className="contactButton" to="./contact">
             Let's Chat
-          </Link>
+          </Link> */}
         </div>
       </div>
 
-      <div className="projectSection">
+      {/* <div className="projectSection">
         <h3>Sneek Peek of my Portfolio</h3>
         <div className="projects">
           <ProjectCard
@@ -57,7 +58,7 @@ export default function Home() {
             src="./media/Vanes_Veggie_Visits/VeggieVisitsLogo1.png"
           />
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
