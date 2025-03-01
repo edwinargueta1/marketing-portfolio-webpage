@@ -8,7 +8,7 @@ export default function Home() {
       <div className="row">
         <div className="headContent">
           <div className="top">
-            <img id="profilePhoto" className="shadow" src={images.profile}></img>
+            <img id="profilePhoto" className="shadow" src={images.profile} alt="profile"></img>
           </div>
         </div>
 

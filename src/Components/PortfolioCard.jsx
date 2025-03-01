@@ -4,10 +4,11 @@ export default function PortfolioCard(props){
 
     const [fileType , setFileType] = useState(null);
     const [date, setDate] = useState(new Date(props.date).toUTCString().slice(0,16));
+    console.log(setDate);
 
     useEffect(() => {
         function setFile(file){
-            if(!typeof file === "string" || undefined == file){return};
+            if(!typeof file === "string" || undefined === file){return};
             let extenSplit = file.split(".");
             if(extenSplit.length <= 1){
                 console.error("File name does not have an extension.");

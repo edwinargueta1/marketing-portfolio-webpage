@@ -12,7 +12,7 @@ export default function Contact() {
       e.preventDefault();
       setConsoleMesssage("");
   
-      const mail = { name, email, message };
+      // const mail = { name, email, message };
   
       fetch("https://formsubmit.co/ajax/darkcloud120898@gmail.com", {
         method: "POST",
@@ -40,24 +40,24 @@ export default function Contact() {
       setMessage("");
     }
 
-    function isFormValid(){
-        if(name.length < 2 || name.length > 30){
-            return false;
-        }
-        // if()
+    // function isFormValid(){
+    //     if(name.length < 2 || name.length > 30){
+    //         return false;
+    //     }
+    //     // if()
 
 
-        return true;
-    }
+    //     return true;
+    // }
 
-    function validEmail(){
-        const emailRegex = /^[^\s@]{1,64}@[^\s@]{1,253}\.[^\s@]{2,}$/;
+    // function validEmail(){
+    //     const emailRegex = /^[^\s@]{1,64}@[^\s@]{1,253}\.[^\s@]{2,}$/;
 
-        if(email.length > 320 || email.length < 1){
-            setConsoleMesssage("")
-            return false;
-        }
-    }
+    //     if(email.length > 320 || email.length < 1){
+    //         setConsoleMesssage("")
+    //         return false;
+    //     }
+    // }
   
     return (
       <div className="pageWrapper">

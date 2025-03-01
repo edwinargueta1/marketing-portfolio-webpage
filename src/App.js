@@ -1,9 +1,9 @@
-import { React, useState } from 'react';
+import { React } from 'react';
 import './App.css';
 
 //Components
 import NavBar from './Components/NavBar.jsx';
-import FooterSection from './Components/Footer.jsx';
+// import FooterSection from './Components/Footer.jsx';
 import { Outlet } from 'react-router-dom';
 
 
