@@ -1,32 +1,24 @@
-import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { ReactComponent as BackIcon} from '../Assets/Icons/backIcon.svg';
+import { useState } from "react";
+import { ReactComponent as BackIcon } from "../Assets/Icons/backIcon.svg";
 
-export default function NavBar() {
-  // const [shadowNav, setShadowNav] = useState(false);
+export default function NavBar(props) {
 
-  // //
-  // useEffect(() => {
-  //   const isAtTop = () => {
-  //     setShadowNav(window.scrollY > 0);
-  //   };
+  const [isMenuActive, setIsMenuActive] = useState(true);
 
-  //   window.addEventListener("scroll", isAtTop);
-
-  //   return () => {
-  //     window.removeEventListener("scroll", isAtTop);
-  //   };
-  // }, []);
+  function toggleMenu() {
+    setIsMenuActive((prev) => !prev);
+  }
 
   return (
-    <nav>
-      <div className="menu">
+    <nav >
+      <div id="menu" className={`${isMenuActive ? "" : "closed"}`}>
         <ul>
           <li>
-            <Link to={"./"}>Home</Link>
+            <Link to="./">Home</Link>
           </li>
           <li>
-            <Link to={"./contact"}>Contact</Link>
+            <Link to="./contact">Contact</Link>
           </li>
           <li>
             <p>Experience:</p>
@@ -34,20 +26,33 @@ export default function NavBar() {
           <li>
             <ul>
               <li>
-                <Link to="./ALS">ALS Network: PR and Marketing Manager</Link>
+                <Link to="./ALSNetwork">
+                  ALS Network: PR and Marketing Manager
+                </Link>
               </li>
               <li>
-                <Link>Polishing the Professional</Link>
+                <Link to="./PolishingTheProfessional">
+                  Polishing the Professional
+                </Link>
               </li>
               <li>
-                <Link>Vane's Veggie Visits</Link>
+                <Link to="./TheAbleShow">The Able Show</Link>
+              </li>
+              <li>
+                <Link to="./VanesVeggieVisits">Vane's Veggie Visits</Link>
               </li>
             </ul>
           </li>
         </ul>
       </div>
-      <div className="collapseMenuButton"><BackIcon/></div>
-      <div className="verticalLine"></div>
+      <div id="verticalLine" className={`verticalLine ${isMenuActive ? "" : "invisible"}`}></div>
+      <div
+        id="collapseMenuButton"
+        className={`collapseMenuButton ${isMenuActive ? "" : "flip-rotation"}`}
+        onClick={toggleMenu}
+      >
+        <BackIcon />
+      </div>
     </nav>
   );
 }

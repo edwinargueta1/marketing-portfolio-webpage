@@ -1,7 +1,5 @@
 import React from "react";
-import ProjectCard from "../Components/ProjectCard.jsx";
 import images from "../Assets/images.js";
-import { Link } from "react-router-dom";
 
 export default function Home() {
   return (
@@ -10,7 +8,7 @@ export default function Home() {
       <div className="row">
         <div className="headContent">
           <div className="top">
-            <img id="profilePhoto" src={images.profile}></img>
+            <img id="profilePhoto" className="shadow" src={images.profile}></img>
           </div>
         </div>
 
@@ -30,35 +28,8 @@ export default function Home() {
               listening skills, adaptability, and a creative mindset.
             </p>
           </div>
-          {/* <Link className="contactButton" to="./contact">
-            Let's Chat
-          </Link> */}
         </div>
       </div>
-
-      {/* <div className="projectSection">
-        <h3>Sneek Peek of my Portfolio</h3>
-        <div className="projects">
-          <ProjectCard
-            href="./portfolio"
-            title="ALS Network"
-            text="Non-profit serving people living with ALS in California and Hawaii."
-            src="https://alsnetwork.org/wp-content/uploads/2024/01/ALSNetwork-logo.png"
-          />
-          <ProjectCard
-            href=""
-            title="The Able Show"
-            text="Podcast production by people with disabilities."
-            src="https://theableshow.com/wp-content/uploads/2023/06/cropped-The-Able-Show-LO-FF02-.png"
-          />
-          <ProjectCard
-            href=""
-            title="Vane's Vegan Visits"
-            text="Local Los Angeles food blog."
-            src="./media/Vanes_Veggie_Visits/VeggieVisitsLogo1.png"
-          />
-        </div>
-      </div> */}
     </div>
   );
 }

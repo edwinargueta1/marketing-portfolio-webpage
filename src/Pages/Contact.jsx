@@ -60,7 +60,7 @@ export default function Contact() {
     }
   
     return (
-      <>
+      <div className="pageWrapper">
         <div id='contactSection'>
           <div id='contactDirections'>
             <h3>Get in Touch!</h3>
@@ -96,6 +96,6 @@ export default function Contact() {
             <button className='contactButton' type='submit'>Send Mail</button>
           </form>
         </div>
-      </>
+      </div>
     )
   }
