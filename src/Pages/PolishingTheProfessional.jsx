@@ -1,7 +1,7 @@
 import PortfolioCard from "../Components/PortfolioCard.jsx";
-import { InstagramEmbed } from "react-social-media-embed";
-import images from "../Assets/images.js";
-import { Link } from "react-router-dom";
+// import { InstagramEmbed } from "react-social-media-embed";
+// import images from "../Assets/images.js";
+// import { Link } from "react-router-dom";
 import InstagramIcon from "../Assets/Icons/InstagramIcon.jsx";
 
 
