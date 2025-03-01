@@ -9,7 +9,6 @@ export default function PortfolioCard(props){
         function setFile(file){
             if(!typeof file === "string" || undefined == file){return};
             let extenSplit = file.split(".");
-            // console.log(extenSplit);
             if(extenSplit.length <= 1){
                 console.error("File name does not have an extension.");
                 return
