@@ -37,8 +37,8 @@ export default function PortfolioCard(props){
             <p>{date != "Invalid Date" ? date : ""}</p>
             {fileType ? 
                 <div className="portfolioCardMedia">
-                    {fileType === "png" || fileType === "jpg" ? <img src={props.media}/> : ""}
-                    {fileType === "pdf" ? <iframe src={props.media} /> : ""}
+                    {/* {fileType === "png" || fileType === "jpg" ? <img src={props.media}/> : ""}
+                    {fileType === "pdf" ? <iframe src={props.media} /> : ""} */}
                 </div>
             
             : <p>No Image</p>}
